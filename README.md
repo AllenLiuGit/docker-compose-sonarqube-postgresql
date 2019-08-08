@@ -4,8 +4,8 @@
 
 ### 下载编排文件
 ```
-$ git clone https://github.com/Hello-Nemo/docker-SonarQube.git
-$ cd docker-SonarQube
+$ git clone https://github.com/AllenLiuGit/docker-compose-sonarqube-postgresql.git
+$ cd docker-compose-sonarqube-postgresql
 ```
 
 ### 使用
