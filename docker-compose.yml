@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+### SonarQube Container ###########################
+
+    sonarqube:
+        build: ./sonarqube
+        ports:
+            - "9000:9000"
+        links:
+            - postgresql-db
+        environment:
+            - SONARQUBE_JDBC_URL=jdbc:postgresql://postgresql-db:5432/sonar
+
+            
+### PostgreSQL Container #######################################
+
+    postgresql-db:
+      build: ./postgresql-db
+      volumes:
+        - ~/log/postgresql:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+      environment:
+        - POSTGRES_USER=sonar
+        - POSTGRES_PASSWORD=sonar
+
+        
